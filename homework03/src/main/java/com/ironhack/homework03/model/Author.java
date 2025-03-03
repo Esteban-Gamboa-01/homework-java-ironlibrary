@@ -16,7 +16,7 @@ public class Author {
     private String name;
     private String email;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "book_id")
-    private Book authorBook;
+    private Book authorbook;
 }

@@ -18,10 +18,10 @@ public class Issue {
 
     @OneToOne
     @JoinColumn(name = "student_id")
-    private Student issueStudent;
+    private Student issuestudent;
 
     @OneToOne
     @JoinColumn(name = "book_id")
-    private Book issueBook;
+    private Book issuebook;
 
 }

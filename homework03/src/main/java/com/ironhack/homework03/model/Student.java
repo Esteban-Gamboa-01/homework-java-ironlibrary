@@ -16,6 +16,6 @@ public class Student {
     private String usn;
     private String name;
 
-    @OneToOne(mappedBy = "studentIssue")
-    private Issue issue;
+//    @OneToOne(mappedBy = "studentissue")
+//    private Issue issue;
 }

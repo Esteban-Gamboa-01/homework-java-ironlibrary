@@ -18,9 +18,9 @@ public class Book {
     private String category;
     private int quantity;
 
-    @OneToOne(mappedBy = "authorBook")
-    private Book book;
-
-    @OneToOne(mappedBy = "issueBook")
-    private Issue issue;
+//    @OneToOne(mappedBy = "authorbook")
+//    private Book book;
+//
+//    @OneToOne(mappedBy = "issuebook")
+//    private Issue issue;
 }

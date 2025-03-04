@@ -16,11 +16,11 @@ public class Issue {
     private String issueDate;
     private String returnDate;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_id")
     private Student issuestudent;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "book_id")
     private Book issuebook;
 

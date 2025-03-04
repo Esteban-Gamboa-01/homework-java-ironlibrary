@@ -1,5 +1,6 @@
 package com.ironhack.homework03.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -21,10 +22,10 @@ import lombok.NoArgsConstructor;
 
 
 
-        //    @OneToOne(mappedBy = "authorbook")
-
+        @OneToOne(mappedBy = "authorbook")
+        private Author author;
 //    private Book book;
-//
-//    @OneToOne(mappedBy = "issuebook")
-//    private Issue issue;
+
+        @OneToOne(mappedBy = "issuebook") //, cascade = CascadeType.REMOVE, orphanRemoval = true
+        private Issue issue;
 }

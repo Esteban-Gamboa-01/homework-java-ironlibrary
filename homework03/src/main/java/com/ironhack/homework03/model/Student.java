@@ -1,5 +1,6 @@
 package com.ironhack.homework03.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -16,6 +17,6 @@ public class Student {
     private String usn;
     private String name;
 
-//    @OneToOne(mappedBy = "studentissue")
-//    private Issue issue;
+    @OneToOne(mappedBy = "issuestudent" ,  cascade = CascadeType.ALL, orphanRemoval = true)
+    private Issue issue;
 }

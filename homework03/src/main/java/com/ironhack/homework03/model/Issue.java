@@ -16,12 +16,22 @@ public class Issue {
     private String issueDate;
     private String returnDate;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "student_id")
+    @OneToOne
+    @JoinColumn(name = "student_id", unique = true)
     private Student issuestudent;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "book_id")
+    @OneToOne
+    @JoinColumn(name = "book_id", unique = true)
     private Book issuebook;
+
+    public void addBook(Book book){
+        this.issuebook = book;
+        book.setIssue(this);
+    }
+
+    public void addStudent(Student student){
+        this.issuestudent=student;
+        student.setIssue(this);
+    }
 
 }

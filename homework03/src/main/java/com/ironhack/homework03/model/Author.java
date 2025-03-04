@@ -19,4 +19,9 @@ public class Author {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "book_id")
     private Book authorbook;
+
+    public void addBook(Book book){
+        this.authorbook = book;
+        book.setAuthor(this);
+    }
 }

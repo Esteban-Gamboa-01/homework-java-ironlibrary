@@ -48,7 +48,7 @@ class IssueTest {
     }
 
     @AfterEach
-    public void tearDown(){
+    public void tearDown(){ // EL ORDEN ES IMPORTANTE
         issueRepository.deleteAll();
         studentRepository.deleteAll();
         authorRepository.deleteAll();
@@ -118,6 +118,11 @@ class IssueTest {
         System.out.println(testBook.get().getAuthor().getName()+" is the author of "+testBook.get().getTitle());
         assertEquals("Robert2",testBook.get().getAuthor().getName());
         assertEquals("Juanita Doe",testBook.get().getIssue().getIssuestudent().getName());
+
+
+        Optional<Student> testStudent = studentRepository.findById("USN-131");
+        System.out.println(testStudent.get().getName()+" has been issued the book "+testStudent.get().getIssue().getIssuebook().getTitle());
+        assertEquals("Introduction to Scripting",testStudent.get().getIssue().getIssuebook().getTitle());
     }
 
     @Test

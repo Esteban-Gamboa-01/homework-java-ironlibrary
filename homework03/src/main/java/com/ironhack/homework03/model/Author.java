@@ -20,8 +20,4 @@ public class Author {
     @JoinColumn(name = "book_id")
     private Book authorbook;
 
-    public void addBook(Book book){
-        this.authorbook = book;
-        book.setAuthor(this);
-    }
 }

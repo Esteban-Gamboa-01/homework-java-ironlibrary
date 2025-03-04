@@ -24,14 +24,5 @@ public class Issue {
     @JoinColumn(name = "book_id", unique = true)
     private Book issuebook;
 
-    public void addBook(Book book){
-        this.issuebook = book;
-        book.setIssue(this);
-    }
-
-    public void addStudent(Student student){
-        this.issuestudent=student;
-        student.setIssue(this);
-    }
 
 }

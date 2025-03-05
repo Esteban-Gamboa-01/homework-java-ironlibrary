@@ -1,6 +1,11 @@
 package com.ironhack.homework03;
 
 import com.ironhack.homework03.model.Style;
+import com.ironhack.homework03.repository.AuthorRepository;
+import com.ironhack.homework03.repository.BookRepository;
+import com.ironhack.homework03.repository.IssueRepository;
+import com.ironhack.homework03.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -10,6 +15,13 @@ import java.util.Scanner;
 
 @Component
 public class Menu {
+
+    @Autowired
+    AuthorRepository authorRepository;
+    BookRepository bookRepository;
+    IssueRepository issueRepository;
+    StudentRepository studentRepository;
+
     Scanner scanner = new Scanner(System.in);
 
     public void showMenu() {
@@ -31,26 +43,65 @@ public class Menu {
         boolean option = true;
 
         System.out.println("\nPlease introduce a command:");
-        String cmd = scanner.nextLine();
-        cmd = cmd.toUpperCase();
-        if(cmd.equals("EXIT")){
-            option = false;
-            scanner.close();
-        }else{
-            try{
-                sanitize(cmd);
-            } catch (Exception e) {
-                //System.out.println("Command not recognized, please try again.");
-                System.out.println(e.getMessage());
-            }
+        try {
+            int cmd = scanner.nextInt();
+                try{
+                    sanitize(cmd);
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+        } catch (InputMismatchException e) {
+            // If the input is not a number
+            System.out.println(Style.ERROR + "Invalid input. Please enter a valid number." + Style.RESET);
+            scanner.nextLine();
         }
-        //scanner.close();
+
         return option;
     }
 
-    private void sanitize(String cmd) {
-        System.out.println("The command introduced is: "+ cmd);
+    public void sanitize(int option){
+
+        switch (option) {
+            case 1:
+                // ADD BOOK
+
+                break;
+            case 2:
+                // SEARCH BOOK BY TITLE
+
+                break;
+            case 3:
+                // SEARCH BOOK BY CATEGORY
+
+                break;
+            case 4:
+                // SEARCH BOOK BY AUTHOR
+
+                break;
+            case 5:
+                // LIST ALL BOOKS ALONG WITH AUTHOR
+
+                break;
+            case 6:
+                // ISSUE BOOK TO STUDENT
+
+                break;
+            case 7:
+                // LIST BOOKS BY USN
+
+                break;
+            case 8:
+                // EXIT
+                System.out.println(Style.SUCCESS_BG+Style.BOLD + "Exiting program..." + Style.RESET);
+
+                // End the program safe
+                System.exit(0);
+                break;
+            default:
+                throw new IllegalArgumentException(Style.ERROR + "Invalid Option." + Style.RESET);
+        }
     }
+
 
     public void closeScanner(){
         scanner.close();

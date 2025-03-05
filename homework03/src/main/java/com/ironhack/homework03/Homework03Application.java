@@ -26,5 +26,8 @@ public class Homework03Application implements CommandLineRunner {
 			res = menu.selectCommand();
 		}while(res);
 		menu.closeScanner();
+
+		// End the program
+//		System.exit(0);
 	}
 }

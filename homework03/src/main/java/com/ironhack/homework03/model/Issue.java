@@ -23,6 +23,4 @@ public class Issue {
     @OneToOne
     @JoinColumn(name = "book_id", unique = true)
     private Book issuebook;
-
-
 }

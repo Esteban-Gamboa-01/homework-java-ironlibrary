@@ -17,10 +17,7 @@ import java.util.Scanner;
 public class Menu {
 
     @Autowired
-    AuthorRepository authorRepository;
-    BookRepository bookRepository;
-    IssueRepository issueRepository;
-    StudentRepository studentRepository;
+    Function function;
 
     Scanner scanner = new Scanner(System.in);
 
@@ -42,7 +39,7 @@ public class Menu {
     public boolean selectCommand(){
         boolean option = true;
 
-        System.out.println("\nPlease introduce a command:");
+        System.out.print("\nPlease enter your choice : ");
         try {
             int cmd = scanner.nextInt();
                 try{
@@ -64,11 +61,10 @@ public class Menu {
         switch (option) {
             case 1:
                 // ADD BOOK
-
+                function.addBook();
                 break;
             case 2:
                 // SEARCH BOOK BY TITLE
-
                 break;
             case 3:
                 // SEARCH BOOK BY CATEGORY

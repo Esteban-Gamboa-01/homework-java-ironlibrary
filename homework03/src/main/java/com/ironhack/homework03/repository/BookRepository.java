@@ -27,7 +27,7 @@ public interface BookRepository extends JpaRepository<Book, String> {
                     "WHERE s.usn = ?1", nativeQuery = true)
     List<Object[]> findAllWhereUsnParams(String usn);
 
-    List<Object[]> findIssueByUsn(String usn);
+//    List<Object[]> findIssueByUsn(String usn);
 
 
 }

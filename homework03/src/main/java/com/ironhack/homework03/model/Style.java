@@ -14,7 +14,7 @@ public class Style {
     public static final String STUDENT = rgbColor(0, 179, 168);
     public static final String HIGHLIGHT = rgbColor(255, 255, 100);
     public static final String ERROR = rgbColor(255, 99, 71);
-    public static final String SUCCESS = rgbColor(144, 238, 144);
+    public static final String SUCCESS = rgbColor(48, 160, 79);
     public static final String SALARY = rgbColor(179, 173, 0);
     public static final String NOT_FOUND = rgbColor(255, 165, 50);
 

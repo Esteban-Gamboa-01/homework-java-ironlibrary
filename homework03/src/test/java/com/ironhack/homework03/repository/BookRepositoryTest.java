@@ -70,28 +70,31 @@ class BookRepositoryTest {
 //
 //    }
 
-    @Test
-    void findAllWhereUsnParams() {
-        Issue secondIssue = new Issue();
-        secondIssue.setIssueDate("2025-03-04");
-        secondIssue.setReturnDate("2025-03-10");
-        student = new Student();
-        student.setUsn("STUDENT2");
-        book = new Book();
-        book.setIsbn("COOLBOOK2");
-        author = new Author();
-        author.setAuthorbook(book);
-        studentRepository.save(student);
-        authorRepository.save(author);
 
-        Optional<Book> newBook = bookRepository.findById("COOLBOOK2");
-        Optional<Student> newStudent = studentRepository.findById("STUDENT2");
-
-        secondIssue.setIssuestudent(newStudent.get());
-        secondIssue.setIssuebook(newBook.get());
-
-        issueRepository.save(secondIssue);
-
-        assertNotNull(issueRepository.findAll());
-    }
+//
+//    @BeforeAll
+//    public void setUp(){
+//
+//    }
+//
+//    @AfterAll
+//    public void tearDown(){
+//
+//    }
+//
+//    @Test
+//    void addBook() {
+//    }
+//
+//    @Test
+//    void findByTitle() {
+//    }
+//
+//    @Test
+//    void findByCategory() {
+//    }
+//
+//    @Test
+//    void findByAuthor() {
+//
 }

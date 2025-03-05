@@ -1,14 +1,8 @@
-package com.ironhack.homework03.model;
-
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-
-import java.util.List;
+package com.ironhack.homework03.repository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class IBookRepositoryTest {
+class BookRepositoryTest {
 //
 //    @BeforeAll
 //    public void setUp(){
@@ -34,5 +28,5 @@ class IBookRepositoryTest {
 //
 //    @Test
 //    void findByAuthor() {
-//    }
+//
 }

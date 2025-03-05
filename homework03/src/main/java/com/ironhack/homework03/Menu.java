@@ -26,5 +26,35 @@ public class Menu {
         System.out.println(Style.BOLD + "\n--------------------------------------------------------------------------------" + Style.RESET);
 
     }
+
+    public boolean selectCommand(){
+        boolean option = true;
+
+        System.out.println("\nPlease introduce a command:");
+        String cmd = scanner.nextLine();
+        cmd = cmd.toUpperCase();
+        if(cmd.equals("EXIT")){
+            option = false;
+            scanner.close();
+        }else{
+            try{
+                sanitize(cmd);
+            } catch (Exception e) {
+                //System.out.println("Command not recognized, please try again.");
+                System.out.println(e.getMessage());
+            }
+        }
+        //scanner.close();
+        return option;
+    }
+
+    private void sanitize(String cmd) {
+        System.out.println("The command introduced is: "+ cmd);
+    }
+
+    public void closeScanner(){
+        scanner.close();
+    }
+
 }
 

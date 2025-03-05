@@ -18,5 +18,11 @@ public class Homework03Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		menu.showMenu();
+//		boolean res = true;
+//		do{
+//			res = menu.selectCommand();
+//		}while(res);
+//
+//		menu.closeScanner();
 	}
 }

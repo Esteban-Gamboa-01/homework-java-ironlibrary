@@ -28,4 +28,14 @@ import lombok.NoArgsConstructor;
 
         @OneToOne(mappedBy = "issuebook") //, cascade = CascadeType.REMOVE, orphanRemoval = true
         private Issue issue;
-}
+
+        @Override
+        public String toString() {
+            return "Book{" +
+                    "isbn='" + isbn + '\'' +
+                    ", title='" + title + '\'' +
+                    ", category='" + category + '\'' +
+                    ", quantity=" + quantity +
+                    '}';
+        }
+    }
